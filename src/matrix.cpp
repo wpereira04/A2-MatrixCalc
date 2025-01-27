@@ -67,19 +67,5 @@ Matrix multiplyMatrices(const Matrix& m1, const Matrix& m2) {
 	// throws an exception if the matrix operation is not possible
 	// TODO: Try doing literal matrix multiplication even if it isn't an actual operation
 	// columns of A must be same size of Rows of B
-	if (m1.size() != m2[0].size()) {
-		throw std::invalid_argument("Matrices are of incompatible sizes");
-	}
-	// creates result matrix
-	Matrix res = createMatrix(m1[0].size(), m2.size());
-	std::size_t sizeMult = m1.size();
-	if (sizeMult < m2.size()) sizeMult = m2.size();
-	for (std::size_t i = 0; i < m2.size()*(m1.size() * m1[0].size()); i++) {
-		int row1 = floor(i / (2 * sizeMult)); // row1 is used by m1 due to the nature of dot product. 3x2 * 2x3  TODO: THIS LINE JUST SEEMS WRONG
-		int row2 = floor(i / m1.size()); //sets row2 so it the column of m2 is goes 0 then 1
-		row2 = row2 % m2.size(); // makes it so when m1 goes to row 2, the column "pointer" is reset to 0
-		int col = i % m1.size(); // this variable acts as columns for m1 but rows for m2
-		res[row2][row1] += m1[col][row1] * m2[row2][col]; // name of variables don't make sense for m2 but the same values can be used as shown
-	}
-	return res;
+	
 }

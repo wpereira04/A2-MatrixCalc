@@ -85,6 +85,6 @@ TEST_CASE("Testing matrix.cpp") {
 
 		REQUIRE(multiplyMatrices(s, t) == expct1); // tests matrix multiplication in one way
 		REQUIRE(multiplyMatrices(t, s) == expct2); // tests matrix multiplication in the reverse way
-		REQUIRE_THROWS(multiplyMatrices(diff, s)); // tests throw
+		REQUIRE_THROWS(multiplyMatrices(s, diff)); // tests throw
 	}
 }

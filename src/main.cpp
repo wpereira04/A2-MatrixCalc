@@ -6,7 +6,7 @@
 // Date:        01/26/2025
 //
 #include "matrix.h"
-#include <iostream>
+
 int main() {
 	Matrix s = createMatrix(3, 3);
 	s[0][0] = 1;
@@ -29,7 +29,7 @@ int main() {
 	for (int i = 0; i < (res.size() * res[0].size()); i++) {
 		int row = floor(i / res.size()); // basic calculation for the row using i and the dimensions of the matrices
 		int col = i % res.size(); // basic calculation for the column using i and the dimensions of the matrices
-		std::cout << res[col][row] << " ";
+		//std::cout << res[col][row] << " ";
 	}
 	//std::cout << s.size()<< res[0][0] << res[0][1] << res[1][0] << res[1][1];
 	return s.size();

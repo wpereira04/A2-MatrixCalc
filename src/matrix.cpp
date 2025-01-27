@@ -53,7 +53,20 @@ Matrix subtractMatrices(const Matrix& m1, const Matrix& m2) {
 }
 
 Matrix multiplyMatrices(const Matrix& m1, const Matrix& m2) {
+	if ((m1.size() != m2.size())||(m1[0].size()!= m2[0].size())) {
+		throw std::invalid_argument("Matrices are of incompatible sizes");
+	}
+	Matrix res = createMatrix(m1[0].size(), m1.size());
+	// subtracts the different elements of the matrices one by one
+	for (std::size_t i = 0; i < (m1.size() * m1[0].size()); i++) {
+		int row = floor(i / m1.size()); // basic calculation for the row using i and the dimensions of the matrices
+		int col = i % m1.size(); // basic calculation for the column using i and the dimensions of the matrices
+		res[col][row] = m1[col][row] * m2[col][row]; // calculates difference and puts in corresponding result space
+	}
+	return res;
 	// throws an exception if the matrix operation is not possible
+	// TODO: Try doing literal matrix multiplication even if it isn't an actual operation
+	// columns of A must be same size of Rows of B
 	if (m1.size() != m2[0].size()) {
 		throw std::invalid_argument("Matrices are of incompatible sizes");
 	}
@@ -61,7 +74,7 @@ Matrix multiplyMatrices(const Matrix& m1, const Matrix& m2) {
 	Matrix res = createMatrix(m1[0].size(), m2.size());
 	std::size_t sizeMult = m1.size();
 	if (sizeMult < m2.size()) sizeMult = m2.size();
-	for (int i = 0; i < m2.size()*(m1.size() * m1[0].size()); i++) {
+	for (std::size_t i = 0; i < m2.size()*(m1.size() * m1[0].size()); i++) {
 		int row1 = floor(i / (2 * sizeMult)); // row1 is used by m1 due to the nature of dot product. 3x2 * 2x3  TODO: THIS LINE JUST SEEMS WRONG
 		int row2 = floor(i / m1.size()); //sets row2 so it the column of m2 is goes 0 then 1
 		row2 = row2 % m2.size(); // makes it so when m1 goes to row 2, the column "pointer" is reset to 0

@@ -9,6 +9,7 @@
 #define MY_CLASS_H
 
 #include <vector>  // Make sure vector is included here
+#include <cmath>
 #include <stdexcept>
 #include <exception>
 

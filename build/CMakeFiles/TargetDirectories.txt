@@ -1,0 +1,5 @@
+C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/MatrixCalc.dir
+C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/my_test.dir
+C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/ZERO_CHECK.dir

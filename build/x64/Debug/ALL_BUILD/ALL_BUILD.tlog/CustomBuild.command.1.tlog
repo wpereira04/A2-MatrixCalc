@@ -1,0 +1,10 @@
+^C:\USERS\WALTE\SOURCE\REPOS\ECE3574\MATRIXCALC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/walte/source/repos/ECE3574/MatrixCalc -BC:/Users/walte/source/repos/ECE3574/MatrixCalc/build --check-stamp-file C:/Users/walte/source/repos/ECE3574/MatrixCalc/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

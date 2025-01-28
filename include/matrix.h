@@ -3,7 +3,7 @@
 // ECE 3574, A2, Walter Pereira Cruz
 // File name: matrix.h
 // Description: Contains the functions belonging to the assignment
-// Date:        01/26/2025
+// Date:        01/27/2025
 //
 #ifndef MY_CLASS_H // include guard
 #define MY_CLASS_H
